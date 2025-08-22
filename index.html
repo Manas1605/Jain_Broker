@@ -11,13 +11,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     :root{
-      --bg:#fafaf9;        /* warm gray */
+      --bg:#f8fafc;        /* light blue-gray */
       --card:#ffffff;      /* white cards */
       --ink:#111827;       /* near-black text */
       --muted:#6b7280;     /* gray text */
-      --accent:#0d9488;    /* teal-emerald */
-      --accent-dark:#0f766e;
-      --accent-ink:#064e3b;
+      --accent:#2C5167;    /* logo blue */
+      --accent-dark:#1e3a4d;
+      --accent-ink:#0f1e29;
     }
     html,body{width:100%; overflow-x: hidden;}
     body {
@@ -33,15 +33,15 @@
       backdrop-filter: blur(12px);
     }
     .hero-gradient {
-      background: radial-gradient(1200px 400px at 10% 10%, rgba(13,148,136,0.08), transparent 60%),
-                  radial-gradient(1000px 400px at 90% 10%, rgba(13,148,136,0.08), transparent 60%),
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(44,81,103,0.08), transparent 60%),
+                  radial-gradient(1000px 400px at 90% 10%, rgba(44,81,103,0.08), transparent 60%),
                   linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     }
     .service-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
     .client-tile { transition: transform .2s ease, box-shadow .2s ease; }
     .client-tile:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
-    .price-marquee { background: linear-gradient(to right, #115e59, #0f766e); color: white; }
+    .price-marquee { background: linear-gradient(to right, #1e3a4d, #2C5167); color: white; }
     img{max-width:100%; height:auto;}
     
     /* Mobile menu improvements */
@@ -128,19 +128,19 @@
   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-3">
     <div class="w-full max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6">
 
-      <a href="#home" class="text-xl font-bold text-teal-700 flex items-center">
+      <a href="#home" class="text-xl font-bold text-[#2C5167] flex items-center">
         <i class="fas fa-seedling mr-2"></i>
         Jain Brokers
       </a>
 
       <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
-        <li><a href="#about" class="hover:text-teal-700 transition">About</a></li>
-        <li><a href="#services" class="hover:text-teal-700 transition">Services</a></li>
-        <li><a href="#clients" class="hover:text-teal-700 transition">Clients</a></li>
-        <li><a href="#contact" class="hover:text-teal-700 transition">Contact</a></li>
+        <li><a href="#about" class="hover:text-[#2C5167] transition">About</a></li>
+        <li><a href="#services" class="hover:text-[#2C5167] transition">Services</a></li>
+        <li><a href="#clients" class="hover:text-[#2C5167] transition">Clients</a></li>
+        <li><a href="#contact" class="hover:text-[#2C5167] transition">Contact</a></li>
       </ul>
 
-      <button id="mobile-menu-button" aria-label="Open Menu" class="md:hidden text-teal-700 z-50 relative">
+      <button id="mobile-menu-button" aria-label="Open Menu" class="md:hidden text-[#2C5167] z-50 relative">
         <i class="fas fa-bars text-2xl"></i>
       </button>
     </div>
@@ -151,28 +151,28 @@
     
     <li>
       <a href="#about" 
-         class="block px-6 py-4 active:bg-teal-50 hover:bg-teal-50 hover:text-teal-700 transition-colors duration-300">
+         class="block px-6 py-4 active:bg-blue-50 hover:bg-blue-50 hover:text-[#2C5167] transition-colors duration-300">
         About
       </a>
     </li>
     
     <li>
       <a href="#services" 
-         class="block px-6 py-4 active:bg-cyan-50 hover:bg-cyan-50 hover:text-cyan-700 transition-colors duration-300">
+         class="block px-6 py-4 active:bg-blue-50 hover:bg-blue-50 hover:text-[#2C5167] transition-colors duration-300">
         Services
       </a>
     </li>
     
     <li>
       <a href="#clients" 
-         class="block px-6 py-4 active:bg-indigo-50 hover:bg-indigo-50 hover:text-indigo-700 transition-colors duration-300">
+         class="block px-6 py-4 active:bg-blue-50 hover:bg-blue-50 hover:text-[#2C5167] transition-colors duration-300">
         Clients
       </a>
     </li>
     
     <li>
       <a href="#contact" 
-         class="block px-6 py-4 active:bg-rose-50 hover:bg-rose-50 hover:text-rose-700 transition-colors duration-300">
+         class="block px-6 py-4 active:bg-blue-50 hover:bg-blue-50 hover:text-[#2C5167] transition-colors duration-300">
         Contact
       </a>
     </li>
@@ -185,14 +185,14 @@
   <!-- Hero -->
   <section id="home" class="pt-28 pb-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
     <!-- Decorative shapes -->
-    <div class="absolute -top-20 -left-20 w-72 h-72 bg-teal-200/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl"></div>
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl"></div>
 
     <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10">
       <!-- Text Content -->
       <div class="md:w-1/2" data-aos="fade-right">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-slate-900 hero-heading">
-          Trusted Cotton & Yarn <span class="text-teal-600">Experts</span>
+          Trusted Cotton & Yarn <span class="text-[#2C5167]">Experts</span>
         </h1>
         <p class="mt-4 md:mt-6 text-base md:text-lg text-slate-600 leading-relaxed">
           Connecting spinning mills, traders & exporters with reliable suppliers worldwide.  
@@ -203,11 +203,11 @@
         <!-- Buttons -->
         <div class="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 hero-buttons">
           <a href="#contact" 
-             class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-lg shadow-teal-600/30 text-center font-semibold tracking-wide transition">
+             class="bg-[#2C5167] hover:bg-[#1e3a4d] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-lg shadow-blue-900/30 text-center font-semibold tracking-wide transition">
             Get Quote
           </a>
           <a href="#services" 
-             class="border border-teal-600 text-teal-700 hover:bg-teal-50 px-6 py-3 md:px-8 md:py-4 rounded-xl text-center font-semibold tracking-wide transition">
+             class="border border-[#2C5167] text-[#2C5167] hover:bg-blue-50 px-6 py-3 md:px-8 md:py-4 rounded-xl text-center font-semibold tracking-wide transition">
             Our Services
           </a>
         </div>
@@ -220,7 +220,7 @@
                class="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-slate-200 object-contain">
 
           <div class="absolute -bottom-4 md:-bottom-6 -left-2 md:-left-6 bg-white shadow-lg rounded-xl px-4 py-2 md:px-6 md:py-4 flex items-center gap-3">
-            <i class="fas fa-seedling text-teal-600 text-xl md:text-2xl"></i>
+            <i class="fas fa-seedling text-[#2C5167] text-xl md:text-2xl"></i>
             <span class="font-medium text-slate-700 text-sm md:text-base">Sustainably Sourced</span>
           </div>
         </div>
@@ -229,27 +229,27 @@
   </section>
 
   <!-- Stats Bar -->
-  <section class="relative py-12 md:py-16 bg-gradient-to-r from-teal-700 via-emerald-700 to-teal-800 text-white">
+  <section class="relative py-12 md:py-16 bg-gradient-to-r from-[#2C5167] via-[#1e3a4d] to-[#2C5167] text-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center stats-grid">
       <!-- Stat Card -->
       <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 shadow-md stat-card" data-aos="fade-up" data-aos-delay="50">
         <div class="text-2xl md:text-4xl lg:text-5xl font-extrabold">500+</div>
-        <div class="text-teal-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Clients Served</div>
+        <div class="text-blue-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Clients Served</div>
       </div>
 
       <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 shadow-md stat-card" data-aos="fade-up" data-aos-delay="100">
         <div class="text-2xl md:text-4xl lg:text-5xl font-extrabold">10000+</div>
-        <div class="text-teal-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Tons Supplied</div>
+        <div class="text-blue-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Tons Supplied</div>
       </div>
 
       <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 shadow-md stat-card" data-aos="fade-up" data-aos-delay="150">
         <div class="text-2xl md:text-4xl lg:text-5xl font-extrabold">15+</div>
-        <div class="text-teal-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Years Experience</div>
+        <div class="text-blue-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Years Experience</div>
       </div>
 
       <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 shadow-md stat-card" data-aos="fade-up" data-aos-delay="200">
         <div class="text-2xl md:text-4xl lg:text-5xl font-extrabold">8</div>
-        <div class="text-teal-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Countries</div>
+        <div class="text-blue-100 mt-1 md:mt-2 tracking-wide text-sm md:text-base">Countries</div>
       </div>
     </div>
   </section>
@@ -258,8 +258,8 @@
   <section id="about" class="py-16 md:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
       <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">About Jain Brokers</h2>
-        <div class="h-1 w-20 bg-teal-600 mx-auto mt-4 rounded"></div>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">About Jain Brokers</h2>
+        <div class="h-1 w-20 bg-[#2C5167] mx-auto mt-4 rounded"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
@@ -275,14 +275,14 @@
           </p>
           <div class="space-y-3 md:space-y-4">
             <div class="flex items-start">
-              <i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i>
+              <i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i>
               <div>
                 <h4 class="font-semibold">Quality Assurance</h4>
                 <p class="text-slate-600 text-sm md:text-base">Rigorous quality checks at every stage</p>
               </div>
             </div>
             <div class="flex items-start">
-              <i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i>
+              <i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i>
               <div>
                 <h4 class="font-semibold">Global Network</h4>
                 <p class="text-slate-600 text-sm md:text-base">Connections with suppliers worldwide</p>
@@ -298,39 +298,39 @@
   <section id="services" class="py-16 md:py-20 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
       <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">Our Services</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">Our Services</h2>
         <p class="mt-3 text-slate-600 max-w-3xl mx-auto text-base md:text-lg">We offer comprehensive solutions for all your cotton and yarn sourcing needs</p>
-        <div class="h-1 w-20 bg-teal-600 mx-auto mt-4"></div>
+        <div class="h-1 w-20 bg-[#2C5167] mx-auto mt-4"></div>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-shopping-basket text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-shopping-basket text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Cotton & Yarn Sourcing</h3>
           <p class="text-slate-600 text-sm md:text-base">End-to-end sourcing solutions from verified suppliers with quality assurance.</p>
         </div>
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-leaf text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-leaf text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Organic Cotton Supply</h3>
           <p class="text-slate-600 text-sm md:text-base">Certified organic cotton meeting international standards and sustainability requirements.</p>
         </div>
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-chart-line text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-chart-line text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Price Discovery</h3>
           <p class="text-slate-600 text-sm md:text-base">Market analysis and competitive pricing to ensure you get the best value.</p>
         </div>
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-clipboard-check text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-clipboard-check text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Quality Verification</h3>
           <p class="text-slate-600 text-sm md:text-base">Comprehensive testing and verification against industry standards and specifications.</p>
         </div>
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-handshake text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-handshake text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Transaction Support</h3>
           <p class="text-slate-600 text-sm md:text-base">End-to-end support including negotiations, contracts, and payment facilitation.</p>
         </div>
         <div class="service-card p-5 md:p-7 bg-white rounded-xl shadow">
-          <div class="text-teal-700 mb-3 md:mb-4"><i class="fas fa-file-export text-2xl md:text-3xl"></i></div>
+          <div class="text-[#2C5167] mb-3 md:mb-4"><i class="fas fa-file-export text-2xl md:text-3xl"></i></div>
           <h3 class="text-lg font-semibold mb-2">Export Documentation</h3>
           <p class="text-slate-600 text-sm md:text-base">Complete handling of export documentation, customs clearance, and logistics support.</p>
         </div>
@@ -339,47 +339,47 @@
   </section>
 
   <!-- Clients -->
-  <section id="clients" class="py-16 md:py-20 bg-gradient-to-r from-teal-50 via-white to-teal-50">
+  <section id="clients" class="py-16 md:py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
     
     <!-- Heading -->
     <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold text-teal-700">Our Clients</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">Our Clients</h2>
       <p class="mt-3 text-slate-600 text-base md:text-lg">
         We are proud to work with leading textile manufacturers and exporters worldwide
       </p>
-      <div class="h-1 w-24 bg-gradient-to-r from-teal-500 to-cyan-400 mx-auto mt-4 rounded"></div>
+      <div class="h-1 w-24 bg-gradient-to-r from-[#2C5167] to-[#4a7a9a] mx-auto mt-4 rounded"></div>
     </div>
 
     <!-- Client Tiles -->
     <div class="flex flex-wrap justify-center gap-4 md:gap-6 client-grid">
       <a href="https://www.sagarmanufacturers.com/" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-teal-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-teal-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Sagar Manufacturers
       </a>
 
       <a href="https://share.google/eQ2mSNEsNunih20rh" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-cyan-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-cyan-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Nahar Group
       </a>
 
       <a href="https://share.google/NNdQofehRkvt5ganA" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-indigo-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-indigo-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Vijay Velavan
       </a>
 
       <a href="https://share.google/EJHyAVrUl5x6qqH2K" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-rose-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-rose-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Sitaram Spinners
       </a>
 
       <a href="https://share.google/prwCghYn0QuUEtOKq" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-amber-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-amber-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Reinhart 1788
       </a>
 
       <a href="https://share.google/jKB2O2ZWJXXnXWH9S" target="_blank"
-        class="client-tile bg-white/70 backdrop-blur-md border border-emerald-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-emerald-700">
+        class="client-tile bg-white/70 backdrop-blur-md border border-blue-100 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center w-full max-w-xs md:w-52 h-20 md:h-28 text-center text-sm md:text-base font-medium text-slate-700 hover:text-[#2C5167]">
         Indo Count
       </a>
     </div>
@@ -397,22 +397,22 @@
 
       </div>
       <div data-aos="fade-left">
-        <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4 md:mb-6">Quality Assurance</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167] mb-4 md:mb-6">Quality Assurance</h2>
         <p class="text-base md:text-lg text-slate-600 leading-relaxed mb-4 md:mb-6">
           We work only with reputed ginners, mills, and exporters, verifying every lot through lab reports and industry standards. This ensures our clients buy with confidence, knowing they get the exact quality they pay for.
         </p>
         <ul class="space-y-2 md:space-y-3">
-          <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Rigorous supplier verification process</span></li>
-          <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Third-party laboratory testing</span></li>
-          <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Compliance with international standards</span></li>
-          <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Detailed quality reports for every shipment</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Rigorous supplier verification process</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Third-party laboratory testing</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Compliance with international standards</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-[#2C5167] mt-1 mr-3"></i><span class="text-slate-700 text-sm md:text-base">Detailed quality reports for every shipment</span></li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Market Updates -->
-  <section class="py-12 md:py-16 bg-teal-700 text-white">
+  <section class="py-12 md:py-16 bg-[#2C5167] text-white">
     <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8" data-aos="fade-up">Market Updates</h2>
 
@@ -431,9 +431,9 @@
   <section id="contact" class="py-16 md:py-20 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
       <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-teal-700">Contact Us</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">Contact Us</h2>
         <p class="mt-3 text-slate-600 text-base md:text-lg">Reach out to discuss your cotton and yarn requirements</p>
-        <div class="h-1 w-20 bg-teal-600 mx-auto mt-4"></div>
+        <div class="h-1 w-20 bg-[#2C5167] mx-auto mt-4"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-12">
@@ -441,17 +441,17 @@
           <form class="space-y-4 md:space-y-5">
             <div>
               <label for="name" class="block text-slate-700 mb-2">Your Name</label>
-              <input type="text" id="name" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+              <input type="text" id="name" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#2C5167] focus:outline-none" required>
             </div>
             <div>
               <label for="email" class="block text-slate-700 mb-2">Your Email</label>
-              <input type="email" id="email" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+              <input type="email" id="email" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#2C5167] focus:outline-none" required>
             </div>
             <div>
               <label for="message" class="block text-slate-700 mb-2">Your Message</label>
-              <textarea id="message" rows="5" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" required></textarea>
+              <textarea id="message" rows="5" class="w-full p-3 md:p-4 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#2C5167] focus:outline-none" required></textarea>
             </div>
-            <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-md transition-all w-full">Send Message</button>
+            <button type="submit" class="bg-[#2C5167] hover:bg-[#1e3a4d] text-white px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-md transition-all w-full">Send Message</button>
           </form>
         </div>
 
@@ -459,17 +459,17 @@
           <div class="bg-white p-6 md:p-8 rounded-xl shadow h-full">
             <h3 class="text-xl font-semibold mb-4 md:mb-6">Get In Touch</h3>
             <div class="space-y-4 md:space-y-5">
-              <p class="flex items-start"><i class="fas fa-map-marker-alt text-teal-700 mr-3 mt-1"></i><span class="text-sm md:text-base">123 Cotton Market, Textile City, Maharashtra, India</span></p>
-              <p class="flex items-start"><i class="fas fa-phone text-teal-700 mr-3 mt-1"></i><span class="text-sm md:text-base">+91 98765 43210</span></p>
-              <p class="flex items-start"><i class="fas fa-envelope text-teal-700 mr-3 mt-1"></i><span class="text-sm md:text-base">info@jainbrokers.com</span></p>
-              <p class="flex items-start"><i class="fas fa-clock text-teal-700 mr-3 mt-1"></i><span class="text-sm md:text-base">Mon - Sat: 9:00 AM - 6:00 PM</span></p>
+              <p class="flex items-start"><i class="fas fa-map-marker-alt text-[#2C5167] mr-3 mt-1"></i><span class="text-sm md:text-base">123 Cotton Market, Textile City, Maharashtra, India</span></p>
+              <p class="flex items-start"><i class="fas fa-phone text-[#2C5167] mr-3 mt-1"></i><span class="text-sm md:text-base">+91 98765 43210</span></p>
+              <p class="flex items-start"><i class="fas fa-envelope text-[#2C5167] mr-3 mt-1"></i><span class="text-sm md:text-base">info@jainbrokers.com</span></p>
+              <p class="flex items-start"><i class="fas fa-clock text-[#2C5167] mr-3 mt-1"></i><span class="text-sm md:text-base">Mon - Sat: 9:00 AM - 6:00 PM</span></p>
             </div>
             <div class="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-slate-200">
               <h4 class="font-semibold mb-3 md:mb-4">Follow Us</h4>
               <div class="flex space-x-4">
-                <a href="#" aria-label="LinkedIn" class="text-teal-700 hover:text-teal-800"><i class="fab fa-linkedin-in text-xl"></i></a>
-                <a href="#" aria-label="Twitter" class="text-teal-700 hover:text-teal-800"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#" aria-label="Facebook" class="text-teal-700 hover:text-teal-800"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" aria-label="LinkedIn" class="text-[#2C5167] hover:text-[#1e3a4d]"><i class="fab fa-linkedin-in text-xl"></i></a>
+                <a href="#" aria-label="Twitter" class="text-[#2C5167] hover:text-[#1e3a4d]"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" aria-label="Facebook" class="text-[#2C5167] hover:text-[#1e3a4d]"><i class="fab fa-facebook-f text-xl"></i></a>
               </div>
             </div>
           </div>
@@ -480,17 +480,17 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-teal-900 text-white py-10 md:py-12">
+  <footer class="bg-[#1e3a4d] text-white py-10 md:py-12">
     <div class="max-w-6xl mx-auto px-4 md:px-6">
       <div class="grid md:grid-cols-4 gap-6 md:gap-8">
         <div>
           <h3 class="text-xl font-bold mb-3 md:mb-4">Jain Brokers</h3>
-          <p class="text-teal-200 text-sm md:text-base">Trusted partners in cotton and yarn sourcing for over 15 years.</p>
+          <p class="text-blue-200 text-sm md:text-base">Trusted partners in cotton and yarn sourcing for over 15 years.</p>
         </div>
 
         <div>
           <h4 class="font-semibold mb-3 md:mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-teal-200">
+          <ul class="space-y-2 text-blue-200">
             <li><a href="#about" class="hover:text-white transition text-sm md:text-base">About Us</a></li>
             <li><a href="#services" class="hover:text-white transition text-sm md:text-base">Services</a></li>
             <li><a href="#clients" class="hover:text-white transition text-sm md:text-base">Clients</a></li>
@@ -500,7 +500,7 @@
 
         <div>
           <h4 class="font-semibold mb-3 md:mb-4">Services</h4>
-          <ul class="space-y-2 text-teal-200">
+          <ul class="space-y-2 text-blue-200">
             <li><a href="#services" class="hover:text-white transition text-sm md:text-base">Cotton Sourcing</a></li>
             <li><a href="#services" class="hover:text-white transition text-sm md:text-base">Yarn Supply</a></li>
             <li><a href="#services" class="hover:text-white transition text-sm md:text-base">Quality Verification</a></li>
@@ -511,7 +511,7 @@
         
       </div>
 
-      <div class="border-t border-teal-800 mt-8 md:mt-10 pt-6 text-center text-teal-200 text-sm md:text-base">
+      <div class="border-t border-blue-800 mt-8 md:mt-10 pt-6 text-center text-blue-200 text-sm md:text-base">
         <p>&copy; 2025 Jain Brokers. All Rights Reserved.</p>
       </div>
     </div>
