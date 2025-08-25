@@ -467,6 +467,194 @@
   animation: marquee 28s linear infinite;
 }
 </style>
+<!-- International Clients Section -->
+<section id="clients" class="py-12 md:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <!-- Heading -->
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">International Clients</h2>
+      <p class="mt-3 text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
+        Some moments where we were in conversation with our international clients
+      </p>
+      <div class="h-1 w-20 bg-[#2C5167] mx-auto mt-4 rounded"></div>
+    </div>
+
+    <!-- Grid Gallery -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <div class="gallery-item overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+        <img src="images/client1.jpg" alt="Client meeting" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 cursor-pointer hover:scale-110">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+        <img src="images/client2.jpg" alt="Client discussion" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 cursor-pointer hover:scale-110">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+        <img src="images/client3.jpg" alt="Business meeting" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 cursor-pointer hover:scale-110">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+        <img src="images/client4.jpg" alt="Client presentation" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 cursor-pointer hover:scale-110">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+  <button id="closeBtn" class="absolute top-4 right-4 md:top-6 md:right-6 text-white text-3xl md:text-4xl font-bold z-10 bg-[#2C5167] rounded-full w-10 h-10 flex items-center justify-center">×</button>
+  <button id="prevBtn" class="absolute left-2 md:left-6 text-white text-3xl md:text-4xl z-10 bg-[#2C5167] bg-opacity-70 rounded-full w-10 h-10 flex items-center justify-center">&#10094;</button>
+  <div class="relative max-w-4xl w-full max-h-full flex items-center justify-center">
+    <img id="lightbox-img" src="" class="max-h-[80vh] max-w-full object-contain rounded-lg shadow-lg">
+  </div>
+  <button id="nextBtn" class="absolute right-2 md:right-6 text-white text-3xl md:text-4xl z-10 bg-[#2C5167] bg-opacity-70 rounded-full w-10 h-10 flex items-center justify-center">&#10095;</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('closeBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    let currentIndex = 0;
+
+    // Function to show image in lightbox
+    function showImage(index) {
+      lightboxImg.src = images[index].src;
+      lightboxImg.alt = images[index].alt;
+    }
+
+    // Open lightbox when clicking on an image
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        showImage(currentIndex);
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+    });
+
+    // Navigate to next image
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Navigate to previous image
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Close lightbox
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = ''; // Re-enable scrolling
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = ''; // Re-enable scrolling
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') {
+          lightbox.classList.add('hidden');
+          document.body.style.overflow = ''; // Re-enable scrolling
+        } else if (e.key === 'ArrowRight') {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        } else if (e.key === 'ArrowLeft') {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showImage(currentIndex);
+        }
+      }
+    });
+
+    // Swipe support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - next image
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - previous image
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+    }
+  });
+</script>
+
+
+<!-- Certifications -->
+<!-- Certifications -->
+<section id="certifications" class="py-16 md:py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    
+    <!-- Heading -->
+    <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#2C5167]">Our Certifications</h2>
+      <p class="mt-3 text-slate-600 text-base md:text-lg">
+        We are certified by globally recognized sustainability and quality standards
+      </p>
+      <div class="h-1 w-20 bg-[#2C5167] mx-auto mt-4 rounded"></div>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Card -->
+      <div class="bg-white p-4 rounded-xl shadow-sm flex flex-col items-center hover:scale-105 transition">
+        <img src="images/gots.png" alt="Organic Content Standard" class="h-16 sm:h-20 md:h-24 object-contain">
+        <p class="mt-2 text-sm text-gray-600 text-center">Global Organic textile Standard</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm flex flex-col items-center hover:scale-105 transition">
+        <img src="images/organic.webp" alt="Organic 100" class="h-16 sm:h-20 md:h-24 object-contain">
+        <p class="mt-2 text-sm text-gray-600 text-center">Organic 100</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm flex flex-col items-center hover:scale-105 transition">
+        <img src="images/regenagri.png" alt="Regenagri" class="h-16 sm:h-20 md:h-24 object-contain">
+        <p class="mt-2 text-sm text-gray-600 text-center">Regenagri</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm flex flex-col items-center hover:scale-105 transition">
+        <img src="images/BCI.SVG" alt="Better Cotton Initiative" class="h-16 sm:h-20 md:h-24 object-contain">
+        <p class="mt-2 text-sm text-gray-600 text-center">Better Cotton Initiative</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm flex flex-col items-center hover:scale-105 transition">
+        <img src="images/GRS.png" alt="Global Recycled Standard" class="h-16 sm:h-20 md:h-24 object-contain">
+        <p class="mt-2 text-sm text-gray-600 text-center">Global Recycled Standard</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -494,21 +682,7 @@
     </div>
   </section>
 
-  <!-- Market Updates -->
-  <section class="py-12 md:py-16 bg-[#2C5167] text-white">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8" data-aos="fade-up">Market Updates</h2>
-
-      <div class="price-marquee rounded-lg mb-6 md:mb-8" data-aos="fade-up">
-        <div class="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 lg:gap-10 py-3 market-updates-flex">
-          <div class="flex items-center"><i class="fas fa-tag mr-2"></i><span>Cotton Price: <strong>₹65,000/candy</strong></span></div>
-          <div class="flex items-center"><i class="fas fa-coins mr-2"></i><span>Yarn Price: <strong>₹280/kg</strong></span></div>
-          <div class="flex items-center"><i class="fas fa-chart-line mr-2"></i><span>Vietnam Demand: <strong>Rising</strong></span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  
 
   <!-- Contact -->
   <section id="contact" class="py-16 md:py-20 bg-slate-50">
